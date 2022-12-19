@@ -33,16 +33,16 @@ export class ProductListComponent {
     
 
     if(hasCategoryId){
-      // get the "id" param string. covert string to a number using the "+" symbol
-      
-      // issue here ????
-      this.currentCategoryId = +(this.route.snapshot.paramMap.get('id')?('2'):'');
+      // get the "id" param string. convert string to a number using the "+" symbol
+       
+      // 
+      this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
 
-    }
+    } 
     else {
       // not catgeory id available .. default to category id = 1 
       this.currentCategoryId = 1;
-    }
+    } 
 
     // now  get the products for the given category id
     this.productService.getProductLsit(this.currentCategoryId).subscribe(
